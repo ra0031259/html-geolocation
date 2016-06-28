@@ -16,12 +16,26 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
         <meta name="apple-mobile-web-app-title" content="App Title">
 
-        <!-- Startup Image -->
-        <link rel="apple-touch-startup-image" href="path/to/startup.png">
+        <link rel="manifest" href="/manifest.json">
+
+        <!-- iPhone SPLASHSCREEN-->
+        <link href="images/meta/apple-touch-startup-image-320x460.png" media="(device-width: 320px)" rel="apple-touch-startup-image">
+        <!-- iPhone (Retina) SPLASHSCREEN-->
+        <link href="images/meta/apple-touch-startup-image-640x920.png" media="(device-width: 320px) and (device-height: 460px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+        <!-- iPhone 5 (Retina) SPLASHSCREEN-->
+        <link href="images/meta/apple-touch-startup-image-640x1096.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+        <!-- iPad (non-Retina) (Portrait) -->
+        <link href="images/meta/apple-touch-startup-image-768x1004.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)" rel="apple-touch-startup-image" />
+        <!-- iPad (non-Retina) (Landscape) -->
+        <link href="images/meta/apple-touch-startup-image-1024x748.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)" rel="apple-touch-startup-image" />
+        <!-- iPad (Retina) (Portrait) -->
+        <link href="images/meta/apple-touch-startup-image-1536x2008.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) and (-webkit-min-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+        <!-- iPad (Retina) (Landscape) -->
+        <link href="images/meta/apple-touch-startup-image-2048x1496.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) and (-webkit-min-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
 
         <!-- Add to homescreen -->
         <meta name="mobile-web-app-capable" content="yes">
-        <meta name="theme-color" content="#1A1E23">
+        <meta name="theme-color" content="#1c202b">
 
         <link rel="stylesheet" href="css/reset.min.css"/>
         <link rel="stylesheet" href="css/main.min.css"/>
