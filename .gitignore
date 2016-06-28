@@ -1,0 +1,15 @@
+# Mac OS X
+.DS_Store
+
+# Project Files
+.idea/*
+/nbproject/
+
+# Vendor
+!vendor/autoload.php
+**/vendor/*
+
+# Development
+*/.sass-cache
+**/.sass-cache/*
+**/node_modules/*

@@ -1,0 +1,140 @@
+/* -------------------------------- 
+
+Slider
+
+-------------------------------- */
+
+.tp-slider-wrapper {
+	position: relative;
+	width: 100%;
+	max-width: 100%;
+	
+	/* hide horizontal scrollbar on IE11 */
+	overflow-x: hidden;
+
+	svg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.tp-slider {
+
+	& > li {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		opacity: 0;
+
+		/* hide vertical scrollbar on IE11 */
+		overflow: hidden;
+
+		&.visible {
+			position: relative;
+			z-index: 2;
+			opacity: 1;
+		}
+
+		&.is-animating {
+			z-index: 3;
+			opacity: 1;
+		}
+	}
+
+	.tp-inner-wrapper {
+		/* using padding Hack to fix bug on IE - svg height not properly calculated */
+		height: 0;
+		padding-bottom: 57.15%;
+	}
+}
+
+
+/* -------------------------------- 
+
+TP Slider navigation
+
+-------------------------------- */
+
+.tp-slider-navigation li {
+	position: absolute;
+	z-index: 3;
+	@include center(y);
+	right: 10px;
+	height: 48px;
+	width: 48px;
+
+	a {
+		display: block;
+		height: 100%;
+		overflow: hidden;
+		text-indent: 100%;
+		white-space: nowrap;
+		color: transparent;
+		background: url(../../images/tp-icon-arrows.svg) no-repeat 0 0;
+		@include transition(transform .2s);
+
+		.no-touch &:hover {
+			@include transform(scale(1.1));
+		}
+	}
+
+	&:last-of-type {
+		left: 10px;
+		right: auto;
+
+		a {
+			background-position: -48px 0;
+		}
+	}
+}
+
+/* -------------------------------- 
+
+Slider dots/controls 
+
+-------------------------------- */
+
+.tp-slider-controls {
+	position: absolute;
+	bottom: 20px;
+	@include center(x);
+	z-index: 3;
+	@include clearfix;
+	text-align: center;
+	width: 90%;
+
+	li {
+		display: inline-block;
+		margin-right: 10px;
+
+		&:last-of-type {
+			margin-right: 0;
+		}
+
+		&.selected a {
+			background-color: $color-1;
+		}
+	}
+
+	a {
+		display: block;
+		/* image replacement */
+		overflow: hidden;
+		text-indent: 100%;
+		white-space: nowrap;
+		color: transparent;
+
+		height: 10px;
+		width: 10px;
+		border-radius: 50%;
+		border: 2px solid $color-1;
+
+		.no-touch &:hover {
+			background-color: $color-1;
+		}
+	}
+}

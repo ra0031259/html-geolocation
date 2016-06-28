@@ -1,0 +1,55 @@
+/* EASING */
+
+$easeInOutQuart: cubic-bezier(0.77, 0, 0.175, 1);
+$easeOutQuart: cubic-bezier(0.165, 0.84, 0.44, 1);
+$easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+$easeOutExpo: cubic-bezier(0.19, 1, 0.22, 1);
+$easeInOutBack: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+$easeOutSine: cubic-bezier(0.39, 0.575, 0.565, 1);
+$easeInOutQuad:cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+
+/* DEVELOP */
+
+$environment: false;
+
+@mixin debug($content:false) {
+    @if $environment == true {
+        @if $content == true {
+            @content;
+        } @else {
+            background-color: rgba(red, 0.2);
+        }
+    }
+}
+
+/* -------------------------------- 
+
+    Usage: 
+        .elements {
+            @include debug('border: 1px solid black');
+        } 
+
+-------------------------------- */
+
+// center vertically and/or horizontally an absolute positioned element
+
+@mixin center($xy:xy) {
+    @if $xy == xy {
+        left: 50%;
+        top: 50%;
+        bottom: auto;
+        right: auto;
+        @include transform(translateX(-50%) translateY(-50%));
+    }
+    @else if $xy == x {
+        left: 50%;
+        right: auto;
+        @include transform(translateX(-50%));
+    }
+    @else if $xy == y {
+        top: 50%;
+        bottom: auto;
+        @include transform(translateY(-50%));
+    }
+}

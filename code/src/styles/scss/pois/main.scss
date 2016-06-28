@@ -1,0 +1,12 @@
+.pois-outter-container {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	background-color: black;
+}
+
+#pois-section-map, #pois-map-container {
+	width: 100%;
+	height: calc(100% + 20px);
+	opacity: .65;
+}
